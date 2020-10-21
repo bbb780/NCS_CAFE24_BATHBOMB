@@ -1,0 +1,68 @@
+<div id="footer">
+    <div>
+        <div module="Layout_footer">
+            <!--@css(/css/module/layout/footer.css)-->
+          <div class="footerTop">
+            <div class="footerTop_menu">
+              <div class="footerTop_menu_block pofol_link">
+                <div class="footerTop_menu_head">
+                 <h2 class="footerTop_menu_h2">MORE INFORMATION</h2>
+                </div>
+                <div class="footerTop_menu_body pofol_link_list">
+                  <a href="">[ALL]포트폴리오 바로가기</a>
+                  <a href="">포폴1</a>
+                  <a href="">포폴2</a>
+                  <a href="">포폴3</a>
+                  <a href="">포폴4</a>
+                  <div class="pofol_link_sns">
+                    <a href=""><i class="xi-message xi-2x"></i></a>
+                    <a href=""><i class="xi-mail-o xi-2x"></i></a>
+                    <a href=""><i class="xi-instagram xi-2x"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div module="Layout_Info" class="footerTop_menu_block my_cs" >
+                  <!--@css(/css/module/layout/info.css)-->
+                  <div class="footerTop_menu_head">
+                   <h2 class="footerTop_menu_h2">고객센터</h2>
+                  </div>
+                  <div class="footerTop_menu_body">
+                    <p>전화 문의</p>
+                    <ul>
+                      <li class="tel"><strong>Telephone</strong><span>{$phone}</span></li>
+                    </ul>
+                    <div class="timeinfo">
+                     <p>운영 시간 : 09:30 ~ 18:30 (주말 및 공휴일 휴무)</p>
+                     <p>점심 시간 : 12:00 ~ 13:00</p>
+                     </div>
+                  </div>
+              </div>
+              <div class="footerTop_menu_block appbox">
+                <div class="footerTop_menu_head">
+                 <h2 class="footerTop_menu_h2">모바일</h2>
+                </div>
+                <div class="footerTop_menu_body"></div>
+              </div>
+            </div>
+          </div>
+          <div module="Layout_footer" class="footerBottom">
+           <div class="footerBottom_menu">
+            <ul class="utilMenu">
+                <li class="home"><a href="/index.html">홈</a></li>
+                <li><a href="/shopinfo/company.html">회사소개</a></li>
+                <li><a href="/member/agreement.html">이용약관</a></li>
+                <li><a href="/member/privacy.html"><strong>개인정보처리방침</strong></a></li>
+                <li><a href="/shopinfo/guide.html">이용안내</a></li>
+            </ul>
+            <p class="address">
+                <span>법인명(상호) : {$company_name} </span> <span>대표자(성명) : {$president_name}</span> <span>사업자 등록번호 안내 : [{$company_regno}]</span> <span>통신판매업 신고 {$network_regno}</span> <span>{$biz_no_link}</span> <br />
+                <span>전화 : {$phone}</span> <span>팩스 : {$fax}</span> <span>주소 : {$mall_zipcode} {$mall_addr1} {$mall_addr2}</span><br />
+                <span class="{$cpo_email|display}">개인정보보호책임자 : <a href="mailto:{$cpo_email}">{$cpo_name}({$cpo_email})</a></span><br />
+                <span>Contact <strong><a href="mailto:{$email}">{$email}</a></strong> for more information.</span>
+            </p>
+            <p class="copyright">Copyright &copy; <strong>{$mall_name}</strong>. All rights reserved.</p>
+           </div>
+          </div>
+        </div>
+    </div>
+</div>

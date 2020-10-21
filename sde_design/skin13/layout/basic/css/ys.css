@@ -1,0 +1,340 @@
+/* 기본 */
+* {font-family: 'Noto Sans KR', sans-serif; outline: none}
+.ofys{overflow-y: hidden !important}
+
+/* 팝업 */
+#workIntroduce {position: fixed; left: 0; right:0; top:0; bottom:0;
+                background-color: rgba(0, 0, 0, 0.5); z-index: 100000}
+
+.work_content_wrap{position: absolute;
+                   max-width: 600px;
+                   width: calc(100% - 30px);
+                   margin:auto;
+                   left:0; right: 0; bottom:0; top:50%;
+                   background-color: white;
+                   border: 1px solid #ccc;
+                   transform: translateY(-50%);
+                 }
+
+/* 50%~ 이건 부모보다 아기가 키가 작을 때 쓰는 방법 / 모바일처럼 애기가 키가 더 클 때는 height 줘야 함  */
+/* 클 때 1 : top:0 height:calc(100% - 30px); overflow-y:scroll */
+/* 클 때 2 : top:0; max-height:calc(100% - 30px); min-height:calc(100% - 30px) <- 스크롤 예쁘게 터짐 */
+
+
+.work_content_wrap .work_content{}
+.work_content_wrap button{ float: right; position: relative; z-index: 1000; background-color:white}
+
+
+
+/* 없앨 것들 */
+.inner::after,
+.special,
+.xans-layout-shoppinginfo,
+#header .xans-layout-statelogon span,
+#header .xans-layout-statelogon a:nth-child(4),
+#header .xans-layout-statelogon a:nth-child(6),
+#header .xans-layout-multishoplist,
+#sidebar #searchBarForm, #sidebar .xans-layout-project,
+#sidebar .xans-layout-myshop, #sidebar .banner,
+.sub-category, .sub-category:before,
+.footerBottom_menu .utilMenu li:nth-child(1),
+.footerBottom_menu .utilMenu li:nth-child(5),
+.xans-layout-login
+{display: none}
+
+/* 헤더 */
+
+/* ncs 띠 배너 */
+.xans-smart-banner-admin-PC00010 {text-align: center; background-color: #cbe9fb}
+.xans-smart-banner-admin-PC00010 a img {width: auto !important}
+
+/* 헤더 가상선택자, 높이 */
+#header {position: fixed; top:0; left: 0; right: 0; z-index: 1000; background-color: white; transition: 0.5s}
+#header.scroll {margin-top:-40px}
+#header:before, #header:after {border:0px}
+#header .topArea {padding:0; height: 90px; position: relative;}
+
+/* 헤더 로고 */
+#header .xans-layout-logotop { width: 120px;
+                               position: absolute;
+                               top: 50%;
+                               left: 120px;
+                               transform: translateY(-50%);}
+#header .xans-layout-logotop a {display: inline-block; width: 120px}
+
+/* 헤더라이트 (네비, 오른쪽 아이콘) */
+.headerRight {}
+.headerRight > ul {float: left; padding-left: 300px;}
+.headerRight #navi > li {display: inline-block; font-size:1.4em; font-weight: bold; line-height: 90px;}
+.headerRight #navi >li:hover >a{color:#2277ff; text-decoration: none}
+.headerRight #navi > li > a {margin-right: 20px}
+.headerRight #navi .itembox {display: none; position: absolute;
+                             top:83px; left:425px; z-index: 1000;
+                             width: 450px; height: 270px; background-color: white;
+                             border:1px solid black;
+                             margin-bottom: 0}
+.headerRight #navi > li:nth-child(3):hover .itembox{display: inline-block;}
+.headerRight #navi .itembox .position ul {float: left}
+.headerRight #navi .itembox .position ul > li {margin: 0 20px}
+.headerRight #navi .itembox .position ul > li:nth-child(3) {text-align: left}
+.headerRight #navi .itembox .position ul > li > a {padding:12px 0px; line-height: 23px; font-weight: normal}
+.headerIcon {float: right}
+.headerIcon > * {float: left}
+#searchBarForm {height: 90px}
+.headerIcon .xans-layout-searchheader {position: relative;
+                                       top: 50%;
+                                       transform: translateY(-50%);
+}
+.headerIcon .xans-layout-searchheader fieldset {border:0}
+.headerIcon .xans-layout-searchheader fieldset #keyword {background-color: #f4f4f4;
+                                                         width: 200px; border-radius: 30px}
+.headerIcon .xans-layout-searchheader {float: none; margin: 0; }
+.headerIcon .xans-layout-statelogon, .headerIcon .xans-layout-statelogoff {line-height: 81px; height: 260px; display: none}
+#searchBarForm fieldset input:nth-child(3){    position: absolute;
+    width: 20px;
+    right: 18px;
+    top: 6px;
+}
+
+/* 네비 소?메뉴들 */
+/* .headerRight .xans-layout-boardinfo {display: none} */
+.headerRight #navi .xans-layout-boardinfo {display: none;
+                                           position:absolute; width: 150px; height: 200px; background-color: white;
+                                           border:1px solid black;
+                                           top:83px; left:34%; z-index: 1000;}
+
+.headerRight #navi li:nth-child(6):hover .xans-layout-boardinfo {display: inline-block;}
+.headerRight #navi .xans-layout-boardinfo:after {content:""; position: absolute;
+                                                 border-style: solid;
+                                                 border-color:black;
+                                                 border-width: 1px 1px 0 0;
+                                                 transform: rotate(-45deg);
+                                                 width: 15px; height: 15px;
+                                                 left:30%; top:-3%}
+
+
+
+.headerRight #navi .xans-layout-boardinfo ul {float: left}
+.headerRight #navi .xans-layout-boardinfo ul > li {margin: 0 20px; text-align: left;
+                                                   line-height: 23px;}
+.headerRight #navi .xans-layout-boardinfo ul > li > a { padding:12px 0px;
+                                                       font-weight: normal; font-size:14px}
+
+
+.itembox:before {content: ""; display: block; position: absolute;
+                width: 300px;
+                top: 10px; bottom:10px; right:10px;
+                background:url("/img/itembox_peach.JPG") no-repeat;
+                background-size: 100% auto;}
+
+.itembox:after {content:""; position: absolute;
+                border-style: solid;
+                border-color:black;
+                border-width: 1px 1px 0 0;
+                transform: rotate(-45deg);
+                width: 15px; height: 15px;
+                left:10%; top:-3%}
+
+
+
+/* 탑버튼 */
+.top_button {position: fixed; right: 40px; bottom: 40px; z-index: 9999; border-radius: 100%; background-color: rgba(0,0,0,0.2)}
+.top_button a {display: block; position: relative; width: 50px; height: 50px; z-index: 999}
+.top_button:before {content: ""; display: block; background-image: url(/layout/basic/img/top_button.png); background-repeat: no-repeat;
+                      position: absolute; top: 50%; left: 50%; right: 0; bottom:0; transform: translate(-38%, -50%); z-index: 10}
+/* 콘텐츠 */
+#main #wrap {margin-top: 131px; width: auto}
+#main #container {width: auto}
+#mainBanner > img {width: 100%}
+#main #wrap #contents {
+                          float: none;
+                          width: 1280px;
+                          margin: 0 auto;
+}
+.container .xans-product-listmain-1 {overflow: hidden}
+.xans-product-listmain-1 .iconbox {position: absolute;
+                                   top: 50%;
+                                   left: 50%;
+                                   transform: translate(-50%, -50%);
+                                   display: none;
+                                   z-index: 1
+                                 }
+
+.xans-product-listmain-1.ec-base-product .prdList > li:nth-child(4),
+.xans-product-listmain-1.ec-base-product .prdList > li:nth-child(5) {margin-top: -12px}
+.xans-product-listmain-1.ec-base-product .prdList .thumbnail .prdImg::after {content: "BEST"; display: none;
+                                                                                             position: absolute;
+                                                                                             background-color: black;
+                                                                                             top:0;
+                                                                                             left: 0;
+                                                                                             height: 70px;
+                                                                                             width: 60px;
+                                                                                             color: white;
+                                                                                             font-size: 12px;
+                                                                                             line-height: 70px
+                                                                                           }
+
+.xans-product-listmain-1.ec-base-product .prdList li:nth-child(1) .thumbnail .prdImg::after {content: "BEST"; display: block;
+                                                                                             position: absolute;
+                                                                                             background-color: #ff0342;
+                                                                                             top:0;
+                                                                                             left: 0;
+                                                                                             height: 70px;
+                                                                                             width: 60px;
+                                                                                             color: white;
+                                                                                             font-size: 15px;
+                                                                                             line-height: 70px;
+                                                                                             font-weight: bold
+                                                                                           }
+
+
+.xans-product-listmain-1.ec-base-product .prdList li:nth-child(3),
+.xans-product-listmain-1.ec-base-product .prdList li:nth-child(5) {margin-left: -7px}
+.xans-product-listmain-2 .iconbox {position: absolute;
+                                   right: 3%;
+                                   bottom: 3%;
+                                   z-index: 1
+                                  }
+.xans-product-listmain-2 .iconbox img {width: 30px}
+
+.ec-base-product .prdList .thumbnail:hover .iconbox,
+.xans-product-listmain-1.ec-base-product .prdList .thumbnail:hover .description,
+.xans-product-listmain-1.ec-base-product .prdList .thumbnail:hover .prdImg::after  {display: block}
+
+.xans-product-listmain-1.ec-base-product .title h2 span:after {content: "";
+                                                              display: block;
+                                                              background-color: #ff0342;
+                                                              height: 4px;
+                                                              width: 135px;}
+
+.xans-product-listmain-2.ec-base-product .title h2 span:after{content: "";
+                                                              display: block;
+                                                              background-color: #ff0342;
+                                                              height: 4px;
+                                                              width: 128px;}
+
+.xans-product-listmain-2 .prdList > li:before {content: "NEW";
+                                              display: block;
+                                              position: absolute;
+                                              left: 6px; top:0;
+                                              width: 70px;
+                                              height: 30px;
+                                              background-color: #ff0342;
+                                              font-size: 15px;
+                                              color: white;
+                                              text-align: center;
+                                              line-height: 30px;
+                                              z-index: 100
+                                             }
+.xans-product-listmain-2 .prdList > li:after {
+                                                content: "";
+                                                position: absolute;
+                                                left: 6px;
+                                                right: 6px;
+                                                top: 0;
+                                                bottom: 0;
+                                                border: 1px solid #ddd;
+}
+
+.xans-product-listmain-1.ec-base-product .prdList li:nth-child(2) .thumbnail::after{ content: "";
+                                                                    display: block;
+                                                                    position: absolute;
+                                                                    border-bottom: 1px solid #ddd;
+                                                                    left: 0px;
+                                                                    right: -103%;
+                                                                    bottom: -4px;
+                                                                    z-index: 100;}
+
+
+.xans-product-listmain-1.ec-base-product .prdList li:nth-child(2) .thumbnail::before{ content: "";
+                                                                                      display: block;
+                                                                                      position: absolute;
+                                                                                      border-right: 1px solid #ddd;
+                                                                                      left: 0;
+                                                                                      right: -4px;
+                                                                                      top: 0;
+                                                                                      bottom: -103%;
+                                                                                      z-index: 10;
+                                                                    }
+
+.xans-smart-banner-admin-PC00013 {margin: 65px 0 50px 0}
+.xans-product-listmain-2 .more {text-align: center;
+                                padding-top: 20px;}
+
+.xans-product-listitem-1 li:nth-child(1),
+.xans-product-listitem-1 li:nth-child(2),
+.xans-product-listitem-2 li:nth-child(2) {display: none}
+#aSlide {position: relative;}
+.slide_button {}
+.slick-prev, .slick-next {position: absolute;
+                          z-index: 1;
+                          top: 50%;
+                          transform: translateY(-50%);
+                          background-color: transparent;
+                                                  }
+.slick-prev {left: -60px;}
+.slick-next {right: -60px}
+.xans-product-listmain-2{ position: relative;}
+
+.xans-product-listitem-1 ul li:nth-child(2):after {content: ""; display: block; position: absolute; right: 0; border: 1px solid black}
+
+/* 멤버십 */
+.membership_con {position: relative;}
+.membership_con > p {position: absolute; z-index: 999; right: 0; top:0}
+.membership_icon_wrap {display: table; width: 100%}
+.membership_icon {display: table-cell; width: 20%; padding: 0 10px; position: relative;}
+.membership_icon_text {padding: 250px 10px 0px 10px; text-align: center;}
+.membership_icon:before {content: ""; display: block; background-image: url("/layout/basic/img/membershop_icon.png"); background-repeat: no-repeat;
+                        position: absolute; top:47%; left: 50%; transform: translate(-50%, -50%);
+                        width: 116px; height: 116px;}
+.membership_icon.membership_icon1:before {content: ""; margin-left: -20px}
+.membership_icon.membership_icon2:before {content: ""; background-position: -200px}
+.membership_icon.membership_icon3:before {content: ""; background-position: -400px}
+.membership_icon.membership_icon4:before {content: ""; background-position: -586px}
+.membership_icon.membership_icon5:before {content: ""; background-position: -784px}
+.membership_icon_text strong {font-size: 16px; line-height: 2}
+.membership_icon_text p {font-size: 14px; color:#6d6c6c}
+.membership_wrap h1 {font-size: 25px; color:#2e2e2e; line-height: 2}
+.membership_con span {font-size: 18px; color:#2e2e2e;}
+
+
+
+/* 하단 */
+#footer .xans-layout-footer {height: auto}
+.footerTop {background-color: #f4f4f4; padding: 40px 0;}
+.footerTop .footerTop_menu {background-color: white; margin: 0 auto; width: 1280px;
+                            display: table;}
+.footerTop_menu > div {display: table-cell;}
+.footerTop_menu .footerTop_menu_h2 {font-size: 15px; font-weight: bold}
+.footerTop_menu .footerTop_menu_block {padding: 30px 0px 30px 40px; border-right: 1px solid#f4f4f4}
+
+.footerTop_menu_body, .pofol_link_sns {padding-top: 20px}
+
+.pofol_link {width: 30%}
+.pofol_link_list > a {display: block; line-height: 25px}
+
+
+.my_cs, .appbox {width: 35%}
+.timeinfo {padding-top: 10px}
+
+.footerBottom {padding-bottom:35px}
+.footerBottom_menu {width: 1280px; margin: 0 auto}
+
+.pofol_link_sns a i {margin-right: 10px;}
+.xi-message {color:white; width: 40px; height: 40px; line-height: 40px;
+              background-color: #62d17f; border-radius: 50%; text-align: center;}
+
+.xi-mail-o{color:white; width: 40px; height: 40px; line-height: 40px;
+            background-color: #cc3d3d; border-radius: 50%; text-align: center;}
+
+.xi-instagram{color:white; width: 40px; height: 40px; line-height: 40px;
+              background-color: #9b3bc4; border-radius: 50%; text-align: center;}
+
+
+
+/* 이벤트 페이지 */
+.event_container {
+    padding: 50px 0px;
+    margin: 0 auto;
+    text-align: center;
+}

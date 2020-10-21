@@ -1,0 +1,179 @@
+<!--@css(/layout/basic/css/ys.css)-->
+<!--@js(/js/ys.js)-->
+
+
+<div id="header">
+<div app4you-smart-banner="smart-banner-admin-PC00010" class="-xans-element- xans-smart-banner-admin xans-smart-banner-admin-PC00010"></div>
+  <div class="topArea">
+      <h1 module="Layout_LogoTop">
+          <!--@css(/css/module/layout/logotop.css)-->
+          <a href="/index.html"><img src="/img/logo.svg" alt=""></a>
+      </h1>
+      <div class="headerRight">
+        <ul id="navi">
+         <li><a href="">인기상품</a></li>
+         <li><a href="">신상품</a></li>
+         <li>
+          <a href="/product/list.html?cate_no=24">입욕제</a>
+          <div id="category" module="Layout_category" class="itembox">
+                <!--@css(/css/module/layout/category.css)-->
+                <!--@js(/js/module/layout/category.js)-->
+                <div class="position">
+                    <ul>
+                        <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+                        <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+                        <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+                    </ul>
+                </div>
+            </div>
+         </li>
+         <li ><a href="/front/php/b/board_list.php?board_no=2">이벤트</a></li>
+         <li><a href="">바스참</a></li>
+         <li><a href="">전체게시판</a>
+           <div module="Layout_BoardInfo">
+              <!--@css(/css/module/layout/boardInfo.css)-->
+              <ul>
+                  <li><a href="{$link_board_list}">{$board_name}</a> {$board_adult_icon}</li>
+                  <li><a href="{$link_board_list}">{$board_name}</a> {$board_adult_icon}</li>
+              </ul>
+           </div>
+
+         </li>
+
+        </ul>
+        <div class="headerIcon" id="headerIcon">
+         <div module="Layout_SearchHeader">
+             <!--@css(/css/module/layout/searchHeader.css)-->
+             <!--
+                 $product_page=/product/detail.html
+                 $category_page=/product/list.html
+             -->
+             <fieldset>
+                 <legend>검색</legend>
+                 {$form.keyword}<input type="image" src="/layout/basic/img/search.png" alt="검색" onclick="{$action_search_submit}" /><ul class="autoDrop" id="{$search_auto_id}"></ul></fieldset>
+         </div>
+
+         <ul  class="util">
+
+             <li>
+               <i class="xi-user xi-3x"></i>
+               <div class='utilD2' module="Layout_statelogoff">
+                 <a href="/member/login.html" class="log xi-user-o"><span>로그인</span></a>
+                 <a href="/myshop/order/list.html">주문조회</a>
+                 <a href="/myshop/index.html">마이쇼핑</a>
+                 <a class="{$board_display|display}" href="/board/index.html">게시판</a>
+              </div>
+              <div  class='utilD2' module="Layout_stateLogon">
+                  <a href="{$action_logout}" class="log xi-user-o">로그아웃</a>
+                  <a href="/myshop/order/list.html">주문조회</a>
+                  <a href="/myshop/index.html">마이쇼핑</a>
+                  <a class="{$board_display|display}" href="/board/index.html">게시판</a>
+              </div>
+           </li>
+           <li>
+              <i class="xi-clock-o xi-3x"></i>
+              <div  class='utilD2'>
+                  <!--@css(/css/module/layout/productRecent.css)-->
+
+                  <div module="Layout_productRecent" >
+                    <ul>
+                      <li class="{$disp_recent|display}">
+                          <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="" /><span>{$name}</span></a>
+                      </li>
+                      <li class="{$disp_recent|display}">
+                          <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="" /><span>{$name}</span></a>
+                      </li>
+                  </ul>
+                  <p class="player"><img src="//img.echosting.cafe24.com/skin/base/layout/btn_recent_prev.gif" alt="이전 제품" class="prev" /><img src="//img.echosting.cafe24.com/skin/base/layout/btn_recent_next.gif" alt="다음 제품" class="next" /></p>
+                </div>
+              </div>
+           </li>
+            <li>
+              <i class="xi-cart-o xi-3x"></i>
+              <div  class='utilD2'>
+              <a href="/order/basket.html">장바구니 <span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
+             </div>
+             <div  class='utilD2'>
+             <a href="/order/basket.html">장바구니 <span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
+            </div>
+            </li>
+         </ul>
+
+
+        </div>
+      </div>
+  </div>
+
+
+
+
+ <div class="inner">
+    <div module="Layout_multishopList" class="list">
+        <!--@css(/css/module/layout/multishopList.css)-->
+        <button type="button" class="toggle"><span><img src="//img.cafe24.com/img/common/global/{$current_language_code}_18x12.png" alt="" /> {$current_language}</span></button>
+        <ul module="Layout_multishopListitem">
+            <li class="{$selected_class}">
+                <a href="//{$shop_domain}/">
+                    <img src="//img.cafe24.com/img/common/global/{$language}_32x24.png" alt="" />
+                    <span class="name">{$locale_language}</span>
+                    <span class="unit">{$currency_code}</span>
+                </a>
+            </li>
+            <li class="{$selected_class}">
+                <a href="//{$shop_domain}/">
+                    <img src="//img.cafe24.com/img/common/global/{$language}_32x24.png" alt="" />
+                    <span class="name">{$locale_language}</span>
+                    <span class="unit">{$currency_code}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div module="Layout_multishopList" class="thumb">
+        <!--@css(/css/module/layout/multishopList.css)-->
+        <ul module="Layout_multishopListitem">
+            <li>
+                <a href="//{$shop_domain}/">
+                    <img src="//img.cafe24.com/img/common/global/{$language}_32x24.png" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="//{$shop_domain}/">
+                    <img src="//img.cafe24.com/img/common/global/{$language}_32x24.png" alt="" />
+                </a>
+            </li>
+        </ul>
+        <div module="Layout_multishopListmultioption" class="multiOption">
+            <a href="#none">
+                <span module="Layout_multishopListmultioptionCountry" class="ship">
+                    <strong>Ship to</strong><span> : </span>
+                </span>
+                <span module="Layout_multishopListmultioptionLanguage" class="language">
+                    <strong>Language</strong><span> : <img src="//img.cafe24.com/img/common/global/{$language_code}_32x24.png" alt="" />{$language_name}</span>
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <ul class="special">
+        <li><a href="/product/list.html?cate_no=24">신상품</a></li>
+        <li><a href="/product/list.html?cate_no=25">프리미엄</a></li>
+        <li><a href="/product/list.html?cate_no=26">스페셜상품</a></li>
+    </ul>
+
+    <ul module="Layout_shoppingInfo">
+        <!--@css(/css/module/layout/shoppingInfo.css)-->
+        <li class="{$use_mileage|display}"><a href="/myshop/mileage/historyList.html">{$mileage_name} <strong>{$mileage}</strong></a></li>
+        <li class="{$use_basket_cnt|display}"><a href="/order/basket.html">장바구니 <strong>{$basket_cnt}<span class="{$use_basket_price|display}">({$basket_price})</span></strong></a></li>
+        <li class="{$use_interest_prd|display}"><a href="/myshop/wish_list.html">관심상품 <strong>{$interest_prd_cnt}</strong></a></li>
+        <li class="{$use_like_product_cnt|display}">{$like_prd_tag}</li>
+        <li class="{$use_coupon_cnt|display}"><a href="/myshop/coupon/coupon.html">쿠폰 <strong>{$coupon_cnt}</strong></a></li>
+        <li class="{$use_deposit|display}"><a href="/myshop/deposits/historyList.html">{$deposit_name} <strong>{$deposit}</strong></a></li>
+    </ul>
+
+    <div class="link">
+        <a module="Layout_bookmark" href="/link/bookmark.html" target="_blank" onclick="winPop(this.href); return false;"><span>즐겨찾기</span></a>
+        <a module="Layout_shortcut" href="/link/shortcut.html" target="_blank" onclick="winPop(this.href); return false;">바로가기</a>
+    </div>
+ </div>
+</div>
